@@ -1,9 +1,0 @@
-@import url('./other.css');
-
-body {
-  margin: 0 auto;
-  max-width: 300px;
-  background-image: url(img3.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
