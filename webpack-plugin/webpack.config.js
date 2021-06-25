@@ -34,7 +34,7 @@ module.exports = {
   devServer: {
     open: true,
     port: 3000,
-    hot: true,
+    hotOnly: true,
     contentBase: path.join(__dirname, 'public'),
     proxy: {
       '/api': {
