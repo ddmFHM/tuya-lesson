@@ -1,8 +1,8 @@
 import React from 'react'
-import './test.css'
+import style from './test.module.css'
 export default function Test() {
   return (
-    <div className={'wrap'}>
+    <div className={style.wrap}>
       Test Div
     </div>
   )
