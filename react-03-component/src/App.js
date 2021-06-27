@@ -1,13 +1,17 @@
 // import About from './About'
 // import Header from './Header'
 
+// import State from "./state";
 
-import State from "./state";
+// const obj = {
+//   name: 'ddm',
+//   age: 18
+// }
 
-const obj = {
-  name: 'ddm',
-  age: 18
-}
+// import TestC from "./TestC";
+
+import TestFormNoControl from './Form/TestFormNoControl'
+// import TestForm from './Form/TestForm'
 
 function App() {
   return (
@@ -20,7 +24,13 @@ function App() {
         </p>
       </Header> */}
 
-      <State {...obj} />
+      {/* <State {...obj} /> */}
+
+      {/* <TestC /> */}
+
+      {/* <TestForm /> */}
+
+      <TestFormNoControl />
     </div>
   );
 }
