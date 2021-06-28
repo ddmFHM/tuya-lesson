@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as contentActions from './Store/Actions/Content.action'
 class App extends Component {
 
   constructor() {
@@ -9,11 +11,12 @@ class App extends Component {
 
   handler = () => {
     let content = this.myRef.current.value
-    this.props.dispatch({ type: "addContent", payload: content})
+    this.props.addContent(content)
     this.myRef.current.value = ""
   }
 
   render() {
+    console.log(this.props)
     return (
       <div>
         <input type="text" placeholder="输入标题" ref={this.myRef} />
@@ -29,7 +32,11 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  content: state.content
+  content: state.content.content
 })
 
-export default connect(mapStateToProps)(App)
+const mapDispatchToProps = (dispatch) => ({
+  ...bindActionCreators(contentActions, dispatch)
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
