@@ -1,0 +1,53 @@
+import { handleActions as createReducer } from 'redux-actions'
+import { load_todo_success, add_todo_success, remove_todo_success, modify_todo_success, modify_todo_filter, clear_todo_success, modify_todo_edit_success } from '../actions/todo.actions'
+const initalState = {
+  todos: [],
+  filter: 'all'
+}
+export default createReducer({
+  [load_todo_success]: (state, action) => ({
+    ...state,
+    todos: action.payload
+  }),
+  [add_todo_success]: (state, action) => ({
+    ...state,
+    todos: [...state.todos, action.payload]
+  }),
+  [remove_todo_success]: (state, action) => ({
+    ...state,
+    todos: state.todos.filter(todo => todo.id !== action.payload)
+  }),
+  [modify_todo_success]: (state, action) => {
+    let index = state.todos.findIndex(todo => todo.id === action.payload)
+    let todos = [...state.todos]
+    todos[index].isCompleted = !todos[index].isCompleted
+    return {
+      ...state,
+      todos
+    }
+  },
+  [modify_todo_filter]: (state, action) => {
+    return {
+      ...state,
+      filter: action.payload
+    }
+  },
+  [clear_todo_success]: (state, action) => {
+    let todos = [...state.todos].filter(todo => !todo.isCompleted)
+    return {
+      ...state,
+      todos
+    }
+  },
+  [modify_todo_edit_success]: (state, action) => {
+    let index = state.todos.findIndex(todo => todo.id === action.payload)
+    console.log(index)
+    let todos = [...state.todos]
+    todos[index].isEditing = true
+    return {
+      ...state,
+      todos
+    }
+  }
+}, initalState)
+
