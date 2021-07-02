@@ -1,0 +1,44 @@
+[
+	{
+		"role": 0,
+		"history": [],
+		"_id": "",
+		"name": "",
+		"email": "",
+		"createdAt": "",
+		"updateAt": "",
+		"__v": 0
+	},
+	{
+		"role": 0,
+		"history": [],
+		"_id": "qpkhmdg5tf",
+		"name": "1",
+		"email": "123",
+		"createdAt": "2021-07-02T05:19:31.648Z",
+		"updateAt": "2021-07-02T05:19:31.648Z",
+		"__v": 0,
+		"password": "123"
+	},
+	{
+		"role": 0,
+		"history": [],
+		"_id": "tvjlcroof7",
+		"name": "ddm",
+		"email": "123@qq.com",
+		"createdAt": "2021-07-02T05:20:42.665Z",
+		"updateAt": "2021-07-02T05:20:42.665Z",
+		"__v": 0
+	},
+	{
+		"role": 0,
+		"history": [],
+		"_id": "jhyo9f1coh",
+		"name": "ddm",
+		"email": "123",
+		"createdAt": "2021-07-02T05:33:28.578Z",
+		"updateAt": "2021-07-02T05:33:28.578Z",
+		"__v": 0,
+		"password": "dddd"
+	}
+]
