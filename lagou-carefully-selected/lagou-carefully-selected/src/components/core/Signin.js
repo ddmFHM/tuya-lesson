@@ -10,7 +10,7 @@ export default function Signin() {
   const history = useHistory()
 
   const handleOnFinish = async value => {
-    let result = await axios.post(`${API}/user/signin`, value)
+    let result = await axios.post(`${API}/signin`, value)
     console.log(result)
     localStorage.setItem('jwt', JSON.stringify(result.data))
     const url = result.data.user.role === 1 ? "/admin/dashboard" : "/user/dashboard"

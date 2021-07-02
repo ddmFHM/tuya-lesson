@@ -9,7 +9,7 @@ export default function* signupSaga() {
 
 function* handleSignup(action) {
   try {
-    yield axios.post(`${API}/user/signup`, action.payload)
+    yield axios.post(`${API}/signup`, action.payload)
     yield put(signup_success())
   } catch (error) {
     yield put(signup_fail({

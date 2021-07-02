@@ -9,15 +9,19 @@ import { Link } from 'react-router-dom'
 export default function AddCategory() {
 
   const { token, user: { _id } } = isAuth()
+  console.log(isAuth())
 
   const handleOnFinish = value => {
     if (value.name) {
       axios.post(`${API}/category/create/${_id}`, value, {
         headers: {
-          Authorization: `Bearer ${token}`
+          Authorization: token
         }
       }).then(response => {
+        console.log(console.log('---', response))
         message.success(`${response.data.name}添加成功`)
+      }).catch(() => {
+        message.warning(`添加失败，名称重复`)
       })
     }
   }

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { takeEvery, put, actionChannel } from 'redux-saga/effects'
+import { takeEvery, put } from 'redux-saga/effects'
 import { API } from '../../config'
 import { search_products, search_products_success } from '../actions/search'
 
