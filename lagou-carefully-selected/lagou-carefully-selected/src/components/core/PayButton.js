@@ -19,7 +19,7 @@ export default function PayButton({ address, cart, totalPrice }) {
   }
 
   const showButton = () => {
-    return isAuth() ? <Button onClick={handlePay()} >提交</Button> : <Button><Link to="/signin" >登录</Link></Button>
+    return isAuth() ? <Button onClick={handlePay} >提交</Button> : <Button><Link to="/signin" >登录</Link></Button>
   }
 
   return (

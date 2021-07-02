@@ -10,8 +10,7 @@ const { Title, Paragraph } = Typography
 
 
 export default function ProductItem({ product, imgStyle, showView = true, showCart = true }) {
-  product = { _id: 1, name:"1", description:"1", price:"1", sold:"1", category:"1", createdAt:"1" }
-  const { _id, name, description, price, sold, category, createdAt } = product
+  const { _id, name, description, price, categoryId, photo, createdAt } = product
   const dispatch = useDispatch()
   const addToCart = () => {
     addItem(product, () => {
@@ -33,12 +32,10 @@ export default function ProductItem({ product, imgStyle, showView = true, showCa
     }
     return Buttons
   }
-
   return (
     <Card
       cover={
-        // <Image alt="" src=`${API}/product/photo/${_id}` />
-        <Image alt="" style={imgStyle} src="https://www.baidu.com/img/540x258_2179d1243e6c5320a8dcbecd834a025d.png" />
+        <Image alt="" style={imgStyle} src={`http://localhost/public/upload/${photo}`} />
       }
       actions={showButtons()}
     >
@@ -46,11 +43,11 @@ export default function ProductItem({ product, imgStyle, showView = true, showCa
       <Paragraph ellipsis={{ rows: 2 }} >{description}</Paragraph>
       <Row>
         <Col span="12" >价格：{price}</Col>
-        <Col span="12" >销量：{sold}</Col>
+        {/* <Col span="12" >销量：{sold}</Col> */}
       </Row>
       <Row>
-        <Col span="12" >所属分类：{category}</Col>
-        <Col span="12" >上架事件：{createdAt}</Col>
+        <Col span="12" >所属分类：{categoryId}</Col>
+        <Col span="12" >上架时间：{createdAt}</Col>
       </Row>
     </Card>
   )

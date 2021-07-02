@@ -12,7 +12,7 @@ import AddCategory from './admin/AddCategory'
 import AddProduct from './admin/AddProduct'
 import Product from './core/Product'
 import Order from './admin/Order'
-
+import Cart from './core/Cart'
 export default function Routes() {
   return (
     <Switch>
@@ -25,7 +25,8 @@ export default function Routes() {
       <PrivateAdmin path="/admin/order" component={Order} />
       <PrivateAdmin path="/create/category" component={AddCategory} />
       <PrivateAdmin path="/create/product" component={AddProduct} />
-      <Route path="/product/productId" component={Product} />
+      <Route path="/product/:productId" component={Product} />
+      <Route path="/cart" component={Cart} />
     </Switch>
   )
 }

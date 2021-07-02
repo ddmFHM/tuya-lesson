@@ -20,13 +20,13 @@ export default function Cart() {
   }, [])
 
   useEffect(() => {
-    cart.reduce((currentValue, nextValue) => {
+    let totalPrice = cart.reduce((currentValue, nextValue) => {
       return currentValue += nextValue.count * nextValue.price
     }, 0)
     setTotalPrice(totalPrice)
   }, [cart])
 
-  const cartTable = () => {
+  const cartTable = () => (
     <table>
       <thead className="ant-table-thead">
         <tr>
@@ -44,7 +44,7 @@ export default function Cart() {
         }
       </tbody>
     </table>
-  }
+  )
 
   return (
     <Layout title="购物车" subTitle="付款吧">

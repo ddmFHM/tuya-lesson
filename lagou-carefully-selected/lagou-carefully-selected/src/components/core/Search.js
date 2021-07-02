@@ -7,7 +7,7 @@ import { search_products } from '../../store/actions/search'
 
 export default function Search() {
 
-  const categories = useGetCategories
+  const categories = useGetCategories()
 
   const [form] = Form.useForm()
 
@@ -29,13 +29,13 @@ export default function Search() {
               <Select.Option value="All">
                 所有分类
               </Select.Option>
-              {/* {
+              {
                 categories.map(category => (
                   <Select.Option value={category._id}>
                     { category.name }
                   </Select.Option>
                 ))
-              } */}
+              }
             </Select>
           </Form.Item>
           <Form.Item>
@@ -54,7 +54,7 @@ export default function Search() {
               <ProductItem product={product} />
             </Col>
           ))
-        } */}        
+        } */}
       </Row>
     </>
   )

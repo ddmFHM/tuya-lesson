@@ -15,6 +15,8 @@ export default function Product() {
     dispatch(get_product_by_id({ productId }))
   }, [])
 
+  console.log('prod', product)
+
   return (
     <Layout title="商品详情">
       <Row>

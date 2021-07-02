@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Image, Button, Input } from 'antd'
-import { API } from '../../config'
 import { deleteItem, updateItem } from '../../helpers/cart'
 export default function CartItem({ product, setCart }) {
+
   const [, setCount] = useState(product.count)
 
   const handleChange = event => {
@@ -14,7 +14,7 @@ export default function CartItem({ product, setCart }) {
   return (
     <tr className="ant-table-row">
       <td className="ant-table-cell">
-        <Image width={120} src={`${API}/product/photo/:productId/${product._id}`} />
+        <Image width={120} src={`http://localhost/public/upload/${product.photo}`} />
       </td>
       <td className="ant-table-cell">{product.name}</td>
       <td className="ant-table-cell">{product.price}</td>

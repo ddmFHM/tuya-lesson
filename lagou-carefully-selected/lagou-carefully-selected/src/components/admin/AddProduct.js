@@ -28,14 +28,12 @@ export default function AddProduct() {
   const categories = useGetCategories()
 
   const onFinish = value => {
-    // const formData = new FormData()
-    // for (let attr in value) {
-    //   formData.append(attr, value[attr])
-    // }
-    // formData.append('photo', file)
-    value.photo = "https://img0.baidu.com/it/u=3101694723,748884042&fm=26&fmt=auto&gp=0.jpg"
-    console.log(value)
-    axios.post(`${API}/product/create/${user._id}`, value, {
+    const formData = new FormData()
+    for (let attr in value) {
+      formData.append(attr, value[attr])
+    }
+    formData.append('photo', file)
+    axios.post(`${API}/product/create/${user._id}`, formData, {
       headers: {
         Authorization: token
       }
@@ -63,9 +61,9 @@ export default function AddProduct() {
           <Input />
         </Form.Item>
         <Form.Item label="商品价格" name="price">
-          <Input />
+          <Input type="number" />
         </Form.Item>
-        <Form.Item label="商品分类" name="category">
+        <Form.Item label="商品分类" name="categoryId">
           <Select>
             <Select.Option value="-1" >请选择分类</Select.Option>
             {
@@ -75,8 +73,8 @@ export default function AddProduct() {
             }
           </Select>
         </Form.Item>
-        <Form.Item label="商品熟练" name="quantity">
-          <Input />
+        <Form.Item label="商品数量" name="quantity">
+          <Input type="number" />
         </Form.Item>
         <Form.Item label="是否需要运输" name="shipping">
           <Select>

@@ -2,9 +2,9 @@ const jwt = require('jsonwebtoken')
 const expressJWT = require('express-jwt')
 
 /* 加密token密钥 */
-const secret = "blogSecret"
+const secret = "Secret"
 /* 白名单 */
-const whitelist = ["/api/signup", "/api/signin"]
+const whitelist = ["/api/signup", "/api/signin", '/api/products/search', '/api/categories', '/api/products']
 
 /**
  * 生成token

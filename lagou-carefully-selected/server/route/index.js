@@ -1,9 +1,14 @@
 const express = require('express')
-const { urlencoded, json } = require('express')
+const { urlencoded, json, static } = require('express')
 const cors = require('cors')
 const { varifyToken, errorToken } = require('../utils/jwt')
+const path = require('path')
 const app = express()
 const port = 80
+
+const staticRoot = path.resolve(__dirname, '../public')
+app.use(static(staticRoot))
+app.use('/public', static(staticRoot))
 
 app.use(cors())
 app.use(urlencoded({ extended: true }))

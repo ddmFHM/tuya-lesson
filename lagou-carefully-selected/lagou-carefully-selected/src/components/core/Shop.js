@@ -36,17 +36,16 @@ export default function Shop() {
         <Col span="20">
           <Space size="large" direction="vertical" >
             <Row gutter={[16, 16]} >
-              {/* {
+              {
                 data.map(product => (
                   <Col span="6">
                     <ProductItem product={product} />
                   </Col>
                 ))
-              } */}
+              }
             </Row>
             <Row>
               { size >=4 ? (<Button onClick={loadMore} >加载更多</Button>) : <Empty /> }
-              
             </Row>
           </Space>
         </Col>

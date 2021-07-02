@@ -12,8 +12,8 @@ export default function Home() {
 
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(get_products({ sortBy: "sold", limit: 2, order: "desc"}))
-    dispatch(get_products({ sortBy: "createdAt", limit: 2, order: "desc"}))
+    dispatch(get_products({ sortBy: "sold", limit: 4, order: "desc"}))
+    dispatch(get_products({ sortBy: "createdAt", limit: 4, order: "desc"}))
   }, [])
 
   const { sold, createdAt } = useSelector(state => state.products)
